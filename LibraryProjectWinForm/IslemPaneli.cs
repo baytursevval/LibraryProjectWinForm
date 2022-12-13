@@ -60,5 +60,12 @@ namespace LibraryProjectWinForm
             ksil.MdiParent = this;
             ksil.Show();
         }
+
+        private void gnclleKullanicibtn_Click(object sender, EventArgs e)
+        {
+            KullaniciGuncelleForm kguncel = new KullaniciGuncelleForm();
+            kguncel.MdiParent = this;
+            kguncel.Show();
+        }
     }
 }

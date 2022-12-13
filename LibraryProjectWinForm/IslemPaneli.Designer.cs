@@ -78,6 +78,7 @@ namespace LibraryProjectWinForm
             this.gnclleKullanicibtn.TabIndex = 4;
             this.gnclleKullanicibtn.Text = "Güncelle";
             this.gnclleKullanicibtn.UseVisualStyleBackColor = true;
+            this.gnclleKullanicibtn.Click += new System.EventHandler(this.gnclleKullanicibtn_Click);
             // 
             // ekleKullanicibtn
             // 
