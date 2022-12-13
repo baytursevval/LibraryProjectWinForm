@@ -1,4 +1,5 @@
-﻿using LibraryProjectWinForm.Kullanici;
+﻿using LibraryProjectWinForm.Kaynak;
+using LibraryProjectWinForm.Kullanici;
 using LibraryProjectWinForm.NewFolder1;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,19 @@ namespace LibraryProjectWinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ekleKullanicibtn.Visible = false;
-            gnclleKullanicibtn.Visible = false;
-            silKullanicibtn.Visible = false;
+            if (ekleKullanicibtn.Visible == false)
+            {
+                ekleKullanicibtn.Visible = true;
+                gnclleKullanicibtn.Visible = true;
+                silKullanicibtn.Visible = true;
+            }
+            else
+            {
+                ekleKullanicibtn.Visible = false;
+                gnclleKullanicibtn.Visible = false;
+                silKullanicibtn.Visible = false;
+            }
+            
 
             KullaniciListeForm klisteform = new KullaniciListeForm();
             klisteform.MdiParent = this;
@@ -44,7 +55,13 @@ namespace LibraryProjectWinForm
 
         private void IslemPaneli_Load(object sender, EventArgs e)
         {
-           
+            ekleKullanicibtn.Visible = false;
+            gnclleKullanicibtn.Visible = false;
+            silKullanicibtn.Visible = false;
+
+            ekleKitapbtn.Visible = false;
+            guncelleKitapbtn.Visible = false;
+            silKitapbtn.Visible = false;
         }
 
         private void ekleKullanicibtn_Click(object sender, EventArgs e)
@@ -66,6 +83,32 @@ namespace LibraryProjectWinForm
             KullaniciGuncelleForm kguncel = new KullaniciGuncelleForm();
             kguncel.MdiParent = this;
             kguncel.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (ekleKitapbtn.Visible == false)
+            {
+                ekleKitapbtn.Visible = true;
+                guncelleKitapbtn.Visible = true;
+                silKitapbtn.Visible = true;
+            }
+            else
+            {
+                ekleKitapbtn.Visible = false;
+                guncelleKitapbtn.Visible = false;
+                silKitapbtn.Visible = false;
+            }
+            KaynakListeForm kliste = new KaynakListeForm();
+            kliste.MdiParent = this;
+            kliste.Show();
+        }
+
+        private void ekleKitapbtn_Click(object sender, EventArgs e)
+        {
+            KaynakEkleForm kekle = new KaynakEkleForm();
+            kekle.MdiParent = this;
+            kekle.Show();
         }
     }
 }
