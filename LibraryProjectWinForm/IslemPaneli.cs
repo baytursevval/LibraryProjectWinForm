@@ -1,4 +1,5 @@
-﻿using LibraryProjectWinForm.NewFolder1;
+﻿using LibraryProjectWinForm.Kullanici;
+using LibraryProjectWinForm.NewFolder1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,13 @@ namespace LibraryProjectWinForm
             KullaniciEkleForm ekleForm = new KullaniciEkleForm();
             ekleForm.MdiParent = this;
             ekleForm.Show();
+        }
+
+        private void silKullanicibtn_Click(object sender, EventArgs e)
+        {
+            KullaniciSilForm ksil = new KullaniciSilForm();
+            ksil.MdiParent = this;
+            ksil.Show();
         }
     }
 }

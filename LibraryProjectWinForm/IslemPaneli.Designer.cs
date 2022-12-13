@@ -64,6 +64,7 @@ namespace LibraryProjectWinForm
             this.silKullanicibtn.TabIndex = 5;
             this.silKullanicibtn.Text = "Sil";
             this.silKullanicibtn.UseVisualStyleBackColor = true;
+            this.silKullanicibtn.Click += new System.EventHandler(this.silKullanicibtn_Click);
             // 
             // gnclleKullanicibtn
             // 

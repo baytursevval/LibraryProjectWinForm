@@ -70,17 +70,23 @@
     <Compile Include="Kullanicilar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="NewFolder1\KullaniciEkleForm.cs">
+    <Compile Include="Kullanici\KullaniciEkleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewFolder1\KullaniciEkleForm.Designer.cs">
+    <Compile Include="Kullanici\KullaniciEkleForm.Designer.cs">
       <DependentUpon>KullaniciEkleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewFolder1\KullaniciListeForm.cs">
+    <Compile Include="Kullanici\KullaniciListeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewFolder1\KullaniciListeForm.Designer.cs">
+    <Compile Include="Kullanici\KullaniciListeForm.Designer.cs">
       <DependentUpon>KullaniciListeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciSilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciSilForm.Designer.cs">
+      <DependentUpon>KullaniciSilForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -108,11 +114,14 @@
     <EmbeddedResource Include="IslemPaneli.resx">
       <DependentUpon>IslemPaneli.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewFolder1\KullaniciEkleForm.resx">
+    <EmbeddedResource Include="Kullanici\KullaniciEkleForm.resx">
       <DependentUpon>KullaniciEkleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewFolder1\KullaniciListeForm.resx">
+    <EmbeddedResource Include="Kullanici\KullaniciListeForm.resx">
       <DependentUpon>KullaniciListeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\KullaniciSilForm.resx">
+      <DependentUpon>KullaniciSilForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
