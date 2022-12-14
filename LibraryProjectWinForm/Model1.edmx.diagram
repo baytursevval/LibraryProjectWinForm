@@ -4,17 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6161d7dece734742b8430f13f3473f14" Name="Diagram1" ZoomLevel="82">
+      <Diagram DiagramId="6161d7dece734742b8430f13f3473f14" Name="Diagram1" ZoomLevel="100">
         <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Personeller" Width="1.5" PointX="0.875" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kullanicilar" Width="1.5" PointX="3.25" PointY="0.875" />
-        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kaynaklar" Width="1.5" PointX="5.375" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kayitlar" Width="1.5" PointX="5.75" PointY="1" />
-        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.sysdiagrams" Width="1.5" PointX="3.5" PointY="5.125" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kaynaklar" Width="1.5" PointX="5.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kayitlar" Width="1.5" PointX="7.5" PointY="1" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.sysdiagrams" Width="1.5" PointX="4.25" PointY="4.25" />
         <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" />
         <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" />
-        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" />
-        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

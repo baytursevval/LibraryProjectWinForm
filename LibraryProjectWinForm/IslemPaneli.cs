@@ -1,4 +1,5 @@
-﻿using LibraryProjectWinForm.Kaynak;
+﻿//using LibraryProjectWinForm.Kayitlar;
+using LibraryProjectWinForm.Kaynak;
 using LibraryProjectWinForm.Kullanici;
 using LibraryProjectWinForm.NewFolder1;
 using System;
@@ -109,6 +110,15 @@ namespace LibraryProjectWinForm
             KaynakEkleForm kekle = new KaynakEkleForm();
             kekle.MdiParent = this;
             kekle.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            OduncVerForm odunc = new OduncVerForm();
+            odunc.MdiParent = this;
+            odunc.Show();
+            
+
         }
     }
 }
