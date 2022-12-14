@@ -36,6 +36,7 @@ namespace LibraryProjectWinForm
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +70,7 @@ namespace LibraryProjectWinForm
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 47);
+            this.button1.Location = new System.Drawing.Point(65, 48);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 30);
@@ -96,6 +97,7 @@ namespace LibraryProjectWinForm
             this.dataGridView2.Size = new System.Drawing.Size(477, 114);
             this.dataGridView2.TabIndex = 5;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            
             // 
             // textBox2
             // 
@@ -106,11 +108,23 @@ namespace LibraryProjectWinForm
             this.textBox2.TabIndex = 6;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(65, 119);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 40);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Ödünç Ver";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // OduncVerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 383);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label2);
@@ -139,5 +153,6 @@ namespace LibraryProjectWinForm
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button2;
     }
 }

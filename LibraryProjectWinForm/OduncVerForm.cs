@@ -56,7 +56,32 @@ namespace LibraryProjectWinForm
         {
             string gelenad = textBox2.Text;
             var bulunankaynak = db.Kaynaklar.Where(x => x.kaynak_ad.Contains(gelenad)).ToList();
-            dataGridView2.DataSource = bulunankaynak.ToList();
+            dataGridView2.DataSource = bulunankaynak;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //kişi aldık
+            string secilenkisiTC = textBox1.Text;
+            var secilenkisi = db.Kullanicilar.Where(x => x.kullanici_tc.Equals(secilenkisiTC)).FirstOrDefault();
+
+            //kitap aldık
+            int secilenkitapID =Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
+            var secilenkitap = db.Kaynaklar.Where(x => x.kaynak_id == secilenkitapID).FirstOrDefault();
+
+            Kayitlar yenikayit = new Kayitlar();
+            //yenikayit.kitap_id = secilenkitap.kaynak_id;
+            yenikayit.kitap_id = secilenkitapID;
+            yenikayit.kullanici_id = secilenkisi.kullanici_id;
+            yenikayit.alis_tarih = DateTime.Today;
+            yenikayit.son_tarih = DateTime.Today.AddDays(15);
+            db.Kayitlar.Add(yenikayit);
+            db.SaveChanges();
+
+            var kayitlist = db.Kayitlar.ToList();
+            dataGridView1.DataSource = kayitlist.ToList();
+        }
+
+       
     }
 }
