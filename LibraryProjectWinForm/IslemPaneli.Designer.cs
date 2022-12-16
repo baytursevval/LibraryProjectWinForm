@@ -31,6 +31,7 @@ namespace LibraryProjectWinForm
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemPaneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.silKitapbtn = new System.Windows.Forms.Button();
             this.guncelleKitapbtn = new System.Windows.Forms.Button();
             this.ekleKitapbtn = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@ namespace LibraryProjectWinForm
             this.ekleKullanicibtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.kullaniciBilgiPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,19 @@ namespace LibraryProjectWinForm
             this.panel1.Size = new System.Drawing.Size(220, 459);
             this.panel1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 322);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(220, 35);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Ödünç Ver";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // silKitapbtn
             // 
             this.silKitapbtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -74,6 +87,7 @@ namespace LibraryProjectWinForm
             this.silKitapbtn.TabIndex = 9;
             this.silKitapbtn.Text = "Sil";
             this.silKitapbtn.UseVisualStyleBackColor = true;
+            this.silKitapbtn.Click += new System.EventHandler(this.silKitapbtn_Click);
             // 
             // guncelleKitapbtn
             // 
@@ -175,21 +189,8 @@ namespace LibraryProjectWinForm
             this.kullaniciBilgiPanel.Location = new System.Drawing.Point(220, 0);
             this.kullaniciBilgiPanel.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciBilgiPanel.Name = "kullaniciBilgiPanel";
-            this.kullaniciBilgiPanel.Size = new System.Drawing.Size(536, 63);
+            this.kullaniciBilgiPanel.Size = new System.Drawing.Size(536, 32);
             this.kullaniciBilgiPanel.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 35);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Ödünç Ver";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // IslemPaneli
             // 

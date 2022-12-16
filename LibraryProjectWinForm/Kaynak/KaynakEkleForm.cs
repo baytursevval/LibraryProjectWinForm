@@ -37,5 +37,10 @@ namespace LibraryProjectWinForm.Kaynak
         {
 
         }
+
+        private void KaynakEkleForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

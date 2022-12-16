@@ -27,6 +27,8 @@ namespace LibraryProjectWinForm
 
         }
 
+        //KullaniciListeForm klisteform = new KullaniciListeForm();
+        private KullaniciListeForm klisteform;
         private void button1_Click(object sender, EventArgs e)
         {
             if (ekleKullanicibtn.Visible == false)
@@ -34,18 +36,18 @@ namespace LibraryProjectWinForm
                 ekleKullanicibtn.Visible = true;
                 gnclleKullanicibtn.Visible = true;
                 silKullanicibtn.Visible = true;
+
+                klisteform = new KullaniciListeForm();
+                klisteform.MdiParent = this;
+                klisteform.Show();
             }
             else
             {
                 ekleKullanicibtn.Visible = false;
                 gnclleKullanicibtn.Visible = false;
                 silKullanicibtn.Visible = false;
+                klisteform.Close();
             }
-            
-
-            KullaniciListeForm klisteform = new KullaniciListeForm();
-            klisteform.MdiParent = this;
-            klisteform.Show();
             
         }
 
@@ -65,59 +67,121 @@ namespace LibraryProjectWinForm
             silKitapbtn.Visible = false;
         }
 
+        private KullaniciEkleForm ekleForm;
+        private bool ekleKullaniciDurum = false;
         private void ekleKullanicibtn_Click(object sender, EventArgs e)
         {
-            KullaniciEkleForm ekleForm = new KullaniciEkleForm();
-            ekleForm.MdiParent = this;
-            ekleForm.Show();
-        }
 
+            if (ekleKullaniciDurum==false)
+            {
+                ekleForm = new KullaniciEkleForm();
+                ekleForm.MdiParent = this;
+                ekleForm.Show();
+                ekleKullaniciDurum = true;
+            }
+            else 
+            {
+                ekleForm.Close();
+                ekleKullaniciDurum = false;
+            }
+        }
+        private KullaniciSilForm ksil;
+        private bool silKullaniciDurum = false;
         private void silKullanicibtn_Click(object sender, EventArgs e)
         {
-            KullaniciSilForm ksil = new KullaniciSilForm();
-            ksil.MdiParent = this;
-            ksil.Show();
+            if (silKullaniciDurum == false)
+            {
+                ksil = new KullaniciSilForm();
+                ksil.MdiParent = this;
+                ksil.Show();
+                silKullaniciDurum = true;
+            }
+            else
+            {
+                ksil.Close();
+                silKullaniciDurum = false;
+            }
         }
-
+        private KullaniciGuncelleForm kguncel;
+        private bool gncelleKullaniciDurum = false;
         private void gnclleKullanicibtn_Click(object sender, EventArgs e)
         {
-            KullaniciGuncelleForm kguncel = new KullaniciGuncelleForm();
-            kguncel.MdiParent = this;
-            kguncel.Show();
+            if (gncelleKullaniciDurum == false)
+            {
+                kguncel = new KullaniciGuncelleForm();
+                kguncel.MdiParent = this;
+                kguncel.Show();
+                gncelleKullaniciDurum = true;
+            }
+            else
+            {
+                kguncel.Close();
+                gncelleKullaniciDurum = false;
+            }
+            
         }
-
+        private KaynakListeForm kliste;
         private void button5_Click(object sender, EventArgs e)
         {
             if (ekleKitapbtn.Visible == false)
             {
+                kliste = new KaynakListeForm();
                 ekleKitapbtn.Visible = true;
                 guncelleKitapbtn.Visible = true;
                 silKitapbtn.Visible = true;
+                kliste.MdiParent = this;
+                kliste.Show();
             }
             else
             {
                 ekleKitapbtn.Visible = false;
                 guncelleKitapbtn.Visible = false;
                 silKitapbtn.Visible = false;
+                kliste.Close();
             }
-            KaynakListeForm kliste = new KaynakListeForm();
-            kliste.MdiParent = this;
-            kliste.Show();
+            
+            
         }
-
+        private KaynakEkleForm kekle;
+        private bool kekleDurum = false;
         private void ekleKitapbtn_Click(object sender, EventArgs e)
         {
-            KaynakEkleForm kekle = new KaynakEkleForm();
-            kekle.MdiParent = this;
-            kekle.Show();
+            if (kekleDurum == false)
+            {
+                kekle = new KaynakEkleForm();
+                kekle.MdiParent = this;
+                kekle.Show();
+                kekleDurum = true;
+            }
+            else
+            {
+                kekle.Close();
+                kekleDurum = false;
+            }
         }
-
+        private OduncVerForm odunc;
+        private bool oduncverdurum = false;
         private void button2_Click_1(object sender, EventArgs e)
         {
-            OduncVerForm odunc = new OduncVerForm();
-            odunc.MdiParent = this;
-            odunc.Show();
+            if (oduncverdurum == false)
+            {
+                odunc= new OduncVerForm();
+                odunc.MdiParent = this;
+                odunc.Show();
+                oduncverdurum = true;
+            }
+            else
+            {
+                odunc.Close();
+                oduncverdurum = false;
+            }
             
+            
+
+        }
+
+        private void silKitapbtn_Click(object sender, EventArgs e)
+        {
 
         }
     }
