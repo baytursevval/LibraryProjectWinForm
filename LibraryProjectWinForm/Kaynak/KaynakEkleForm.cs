@@ -31,7 +31,7 @@ namespace LibraryProjectWinForm.Kaynak
             kaynaklar.kaynak_yazar = kaynakYazartxt.Text;
             kaynaklar.kaynak_yayinci = kaynakYayincitxt.Text;
             kaynaklar.kaynak_sayfasayisi =Convert.ToInt16(numericUpDown1.Value);
-            //kaynaklar.kaynak_tur=
+            kaynaklar.kaynak_tur = comboBox1.Text;
 
             db.Kaynaklar.Add(kaynaklar);
             db.SaveChanges();
@@ -44,15 +44,13 @@ namespace LibraryProjectWinForm.Kaynak
         {
             
         }
-        SqlConnection baglanti=new SqlConnection("Data Source=.;Initial Catalog=KutuphaneOtomasyonu;Integrated Security=SSPI");
-
+        //SqlConnection baglanti=new SqlConnection("Data Source=SEVO\\SQLEXPRESS;Initial Catalog=KutuphaneOtomasyonu;Integrated Security=SSPI");
+        
         private void KaynakEkleForm_Load(object sender, EventArgs e)
         {
-            listele();
-            
             /*
             SqlConnection baglanti = new SqlConnection();
-            baglanti.ConnectionString = "Data Source = SEVO;SQLEXPRESS; Initial Catalog = KutuphaneOtomasyonu; Integrated Security = True";
+            baglanti.ConnectionString = "Data Source = SEVO\\SQLEXPRESS; Initial Catalog = KutuphaneOtomasyonu; Integrated Security = True";
             SqlCommand komut = new SqlCommand();
             komut.CommandText = "SELECT *FROM Kaynaklar";
             komut.Connection = baglanti;
@@ -63,10 +61,13 @@ namespace LibraryProjectWinForm.Kaynak
             dr = komut.ExecuteReader();
             while (dr.Read())
             {
-                comboBox1.Items.Add(dr["kitap_tur"]);
+                comboBox1.Items.Add(dr["kaynak_tur"]);
             }
             baglanti.Close();
             */
+
+            listele();
+
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
