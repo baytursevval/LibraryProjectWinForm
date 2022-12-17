@@ -37,5 +37,12 @@ namespace LibraryProjectWinForm.Kullanici
             db.SaveChanges();
             listele();
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string gelenad = textBox2.Text;
+            var bulunanisim = db.Kullanicilar.Where(x => x.kullanici_ad.Contains(gelenad)).ToList();
+            dataGridView1.DataSource = bulunanisim;
+        }
     }
 }

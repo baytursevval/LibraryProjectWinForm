@@ -40,6 +40,7 @@ namespace LibraryProjectWinForm.Kullanici
                 radioButton1.Checked = true;
             else if (dataGridView1.CurrentRow.Cells[7].Value.ToString().Equals("K"))
                 radioButton2.Checked = true;
+            
 
         }
 
@@ -47,13 +48,19 @@ namespace LibraryProjectWinForm.Kullanici
         {
             int secilenid = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             var kullanici = db.Kullanicilar.Where(x => x.kullanici_id == secilenid).FirstOrDefault();
-           
-            kullanici.kullanici_ad = kullaniciAdtxt.Text;
-            kullanici.kullanici_soyad = kullaniciSoyadtxt.Text;
-            kullanici.kullanici_tc = kullaniciTctxt.Text;
-            kullanici.kullanici_tel = kullaniciteltxt.Text;
-            kullanici.kullanici_mail = kullaniciMailtxt.Text;
-            //kullanicilar.kullanici_ceza = Convert.ToDouble(kullaniciCezatxt.Text);
+            //if(kullaniciAdtxt.Text!=null)           
+                kullanici.kullanici_ad = kullaniciAdtxt.Text;
+            
+            //if(kullaniciSoyadtxt.Text!=null)
+                kullanici.kullanici_soyad = kullaniciSoyadtxt.Text;
+            //if(kullaniciTctxt.Text!=null)
+                kullanici.kullanici_tc = kullaniciTctxt.Text;
+            //if(kullaniciteltxt.Text!=null)
+                kullanici.kullanici_tel = kullaniciteltxt.Text;
+           // if(kullaniciMailtxt.Text!=null)
+                kullanici.kullanici_mail = kullaniciMailtxt.Text;
+            //if(kullaniciCezatxt.Text!=null)
+              //  kullanici.kullanici_ceza = Convert.ToDouble(kullaniciCezatxt.Text);
             if (radioButton1.Checked)
                 kullanici.kullanici_cinsiyet = "E";
             else if (radioButton2.Checked)

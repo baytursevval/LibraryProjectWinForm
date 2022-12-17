@@ -176,13 +176,30 @@ namespace LibraryProjectWinForm
                 oduncverdurum = false;
             }
             
-            
-
         }
 
+        private KaynakSilForm kasil;
+        private bool kaSilDurum = false;
         private void silKitapbtn_Click(object sender, EventArgs e)
         {
+            if (kaSilDurum == false)
+            {
+                kasil = new KaynakSilForm();
+                kasil.MdiParent = this;
+                kasil.Show();
+                kaSilDurum = true;
+            }
+            else
+            {
+                kasil.Close();
+                kaSilDurum = false;
+            }
+        }
 
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Çıkmak istiyor musunuz?","confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

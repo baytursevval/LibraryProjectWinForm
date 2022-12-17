@@ -17,6 +17,12 @@ namespace LibraryProjectWinForm.Kaynak
             InitializeComponent();
         }
         KutuphaneOtomasyonuEntities db = new KutuphaneOtomasyonuEntities();
+
+        public void listele()
+        {
+            var kaynaklar = db.Kaynaklar.ToList();
+            dataGridView1.DataSource = kaynaklar.ToList();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Kaynaklar kaynaklar = new Kaynaklar();
@@ -35,12 +41,12 @@ namespace LibraryProjectWinForm.Kaynak
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void KaynakEkleForm_Load(object sender, EventArgs e)
         {
-
+            listele();
         }
     }
 }

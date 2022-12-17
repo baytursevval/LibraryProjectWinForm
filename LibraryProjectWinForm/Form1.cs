@@ -43,5 +43,20 @@ namespace LibraryProjectWinForm
 
            
         }
+
+        private void sifreGiristxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void sifreGiristxt_MouseClick(object sender, MouseEventArgs e)
+        {
+            sifreGiristxt.PasswordChar = '*';
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace LibraryProjectWinForm
             // adGiristxt
             // 
             this.adGiristxt.Location = new System.Drawing.Point(155, 172);
-            this.adGiristxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adGiristxt.Margin = new System.Windows.Forms.Padding(4);
             this.adGiristxt.Multiline = true;
             this.adGiristxt.Name = "adGiristxt";
             this.adGiristxt.Size = new System.Drawing.Size(142, 20);
@@ -76,6 +76,8 @@ namespace LibraryProjectWinForm
             this.sifreGiristxt.Name = "sifreGiristxt";
             this.sifreGiristxt.Size = new System.Drawing.Size(142, 20);
             this.sifreGiristxt.TabIndex = 0;
+            this.sifreGiristxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.sifreGiristxt_MouseClick);
+            this.sifreGiristxt.TextChanged += new System.EventHandler(this.sifreGiristxt_TextChanged);
             // 
             // kullanicigrsbtn
             // 
@@ -96,6 +98,7 @@ namespace LibraryProjectWinForm
             this.pictureBox1.Size = new System.Drawing.Size(70, 70);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // Form1
             // 
@@ -111,7 +114,7 @@ namespace LibraryProjectWinForm
             this.Controls.Add(this.adGiristxt);
             this.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

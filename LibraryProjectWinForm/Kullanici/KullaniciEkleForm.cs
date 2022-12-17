@@ -26,6 +26,7 @@ namespace LibraryProjectWinForm.NewFolder1
         }
         private void KullaniciEkleForm_Load(object sender, EventArgs e)
         {
+            kullaniciCezatxt.Text = "0";
             listele();
         }
 
@@ -37,7 +38,8 @@ namespace LibraryProjectWinForm.NewFolder1
             kullanicilar.kullanici_tc = kullaniciTctxt.Text;
             kullanicilar.kullanici_tel = kullaniciteltxt.Text;
             kullanicilar.kullanici_mail = kullaniciMailtxt.Text;
-            //kullanicilar.kullanici_ceza = Convert.ToDouble(kullaniciCezatxt.Text);
+            //kullanicilar.kullanici_ceza = Convert.ToDouble("0");
+            //kullaniciCezatxt.Text = "0";
             if (radioButton1.Checked)
                 kullanicilar.kullanici_cinsiyet = "E";
             else if (radioButton2.Checked)
@@ -47,6 +49,11 @@ namespace LibraryProjectWinForm.NewFolder1
             db.SaveChanges();
             listele();
             
+        }
+
+        private void kullaniciCezatxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
