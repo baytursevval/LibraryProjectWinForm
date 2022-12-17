@@ -201,5 +201,23 @@ namespace LibraryProjectWinForm
             if(MessageBox.Show("Çıkmak istiyor musunuz?","confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
                 Application.Exit();
         }
+
+        private KaynakGuncelleForm kaynakguncelle;
+        private bool kaynakguncDurum = false;
+        private void guncelleKitapbtn_Click(object sender, EventArgs e)
+        {
+            if (kaynakguncDurum == false)
+            {
+                kaynakguncelle = new KaynakGuncelleForm();
+                kaynakguncelle.MdiParent = this;
+                kaynakguncelle.Show();
+                kaynakguncDurum = true;
+            }
+            else
+            {
+                kaynakguncelle.Close();
+                kaynakguncDurum = false;
+            }
+        }
     }
 }

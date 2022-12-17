@@ -104,6 +104,7 @@ namespace LibraryProjectWinForm
             this.guncelleKitapbtn.TabIndex = 8;
             this.guncelleKitapbtn.Text = "Güncelle";
             this.guncelleKitapbtn.UseVisualStyleBackColor = true;
+            this.guncelleKitapbtn.Click += new System.EventHandler(this.guncelleKitapbtn_Click);
             // 
             // ekleKitapbtn
             // 
