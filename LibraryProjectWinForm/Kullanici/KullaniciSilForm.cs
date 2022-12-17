@@ -36,6 +36,7 @@ namespace LibraryProjectWinForm.Kullanici
             db.Kullanicilar.Remove(kullanici);
             db.SaveChanges();
             listele();
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

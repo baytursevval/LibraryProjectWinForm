@@ -35,11 +35,8 @@ namespace LibraryProjectWinForm.Kullanici
             kullaniciTctxt.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             kullaniciMailtxt.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             kullaniciteltxt.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            //kullaniciCezatxt.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            if (dataGridView1.CurrentRow.Cells[7].Value.ToString().Equals("E"))
-                radioButton1.Checked = true;
-            else if (dataGridView1.CurrentRow.Cells[7].Value.ToString().Equals("K"))
-                radioButton2.Checked = true;
+            kullaniciCezatxt.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+           
             
 
         }
@@ -60,11 +57,8 @@ namespace LibraryProjectWinForm.Kullanici
            // if(kullaniciMailtxt.Text!=null)
                 kullanici.kullanici_mail = kullaniciMailtxt.Text;
             //if(kullaniciCezatxt.Text!=null)
-              //  kullanici.kullanici_ceza = Convert.ToDouble(kullaniciCezatxt.Text);
-            if (radioButton1.Checked)
-                kullanici.kullanici_cinsiyet = "E";
-            else if (radioButton2.Checked)
-                kullanici.kullanici_cinsiyet = "K";
+                kullanici.kullanici_ceza = Convert.ToDouble(kullaniciCezatxt.Text);
+            
             db.SaveChanges();
             listele();
         }

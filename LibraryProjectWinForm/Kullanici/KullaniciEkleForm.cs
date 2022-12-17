@@ -38,12 +38,9 @@ namespace LibraryProjectWinForm.NewFolder1
             kullanicilar.kullanici_tc = kullaniciTctxt.Text;
             kullanicilar.kullanici_tel = kullaniciteltxt.Text;
             kullanicilar.kullanici_mail = kullaniciMailtxt.Text;
-            //kullanicilar.kullanici_ceza = Convert.ToDouble("0");
+            kullanicilar.kullanici_ceza =Convert.ToDouble(kullaniciCezatxt.Text);
             //kullaniciCezatxt.Text = "0";
-            if (radioButton1.Checked)
-                kullanicilar.kullanici_cinsiyet = "E";
-            else if (radioButton2.Checked)
-                kullanicilar.kullanici_cinsiyet = "K";
+            
 
             db.Kullanicilar.Add(kullanicilar);
             db.SaveChanges();

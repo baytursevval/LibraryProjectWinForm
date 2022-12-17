@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,7 @@ namespace LibraryProjectWinForm.Kaynak
             kaynaklar.kaynak_yazar = kaynakYazartxt.Text;
             kaynaklar.kaynak_yayinci = kaynakYayincitxt.Text;
             kaynaklar.kaynak_sayfasayisi =Convert.ToInt16(numericUpDown1.Value);
-            kaynaklar.kaynak_basimtarihi = dateTimePicker1.Value;
+            //kaynaklar.kaynak_tur=
 
             db.Kaynaklar.Add(kaynaklar);
             db.SaveChanges();
@@ -43,10 +44,39 @@ namespace LibraryProjectWinForm.Kaynak
         {
             
         }
+        SqlConnection baglanti=new SqlConnection("Data Source=.;Initial Catalog=KutuphaneOtomasyonu;Integrated Security=SSPI");
 
         private void KaynakEkleForm_Load(object sender, EventArgs e)
         {
             listele();
+            
+            /*
+            SqlConnection baglanti = new SqlConnection();
+            baglanti.ConnectionString = "Data Source = SEVO;SQLEXPRESS; Initial Catalog = KutuphaneOtomasyonu; Integrated Security = True";
+            SqlCommand komut = new SqlCommand();
+            komut.CommandText = "SELECT *FROM Kaynaklar";
+            komut.Connection = baglanti;
+            komut.CommandType = CommandType.Text;
+
+            SqlDataReader dr;
+            baglanti.Open();
+            dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBox1.Items.Add(dr["kitap_tur"]);
+            }
+            baglanti.Close();
+            */
+        }
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

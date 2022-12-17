@@ -25,7 +25,7 @@
           <Property Name="kaynak_yazar" Type="varchar" MaxLength="30" />
           <Property Name="kaynak_yayinci" Type="varchar" MaxLength="30" />
           <Property Name="kaynak_sayfasayisi" Type="int" />
-          <Property Name="kaynak_basimtarihi" Type="datetime" />
+          <Property Name="kaynak_tur" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Kullanicilar">
           <Key>
@@ -38,7 +38,6 @@
           <Property Name="kullanici_mail" Type="varchar" MaxLength="50" />
           <Property Name="kullanici_tel" Type="varchar" MaxLength="11" />
           <Property Name="kullanici_ceza" Type="float" />
-          <Property Name="kullanici_cinsiyet" Type="varchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="Personeller">
           <Key>
@@ -145,7 +144,6 @@
           <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="kullanici_ceza" Type="Double" />
-          <Property Name="kullanici_cinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Kayitlar" Relationship="KutuphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" FromRole="Kullanicilar" ToRole="Kayitlar" />
         </EntityType>
         <EntityType Name="Kaynaklar">
@@ -157,8 +155,8 @@
           <Property Name="kaynak_yazar" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="kaynak_yayinci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="kaynak_sayfasayisi" Type="Int32" />
-          <Property Name="kaynak_basimtarihi" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Kayitlar" Relationship="KutuphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" FromRole="Kaynaklar" ToRole="Kayitlar" />
+          <Property Name="kaynak_tur" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Kayitlar">
           <Key>
@@ -230,7 +228,6 @@
           <EntitySetMapping Name="Kullanicilar">
             <EntityTypeMapping TypeName="KutuphaneOtomasyonuModel.Kullanicilar">
               <MappingFragment StoreEntitySet="Kullanicilar">
-                <ScalarProperty Name="kullanici_cinsiyet" ColumnName="kullanici_cinsiyet" />
                 <ScalarProperty Name="kullanici_ceza" ColumnName="kullanici_ceza" />
                 <ScalarProperty Name="kullanici_tel" ColumnName="kullanici_tel" />
                 <ScalarProperty Name="kullanici_mail" ColumnName="kullanici_mail" />
@@ -244,7 +241,7 @@
           <EntitySetMapping Name="Kaynaklar">
             <EntityTypeMapping TypeName="KutuphaneOtomasyonuModel.Kaynaklar">
               <MappingFragment StoreEntitySet="Kaynaklar">
-                <ScalarProperty Name="kaynak_basimtarihi" ColumnName="kaynak_basimtarihi" />
+                <ScalarProperty Name="kaynak_tur" ColumnName="kaynak_tur" />
                 <ScalarProperty Name="kaynak_sayfasayisi" ColumnName="kaynak_sayfasayisi" />
                 <ScalarProperty Name="kaynak_yayinci" ColumnName="kaynak_yayinci" />
                 <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
