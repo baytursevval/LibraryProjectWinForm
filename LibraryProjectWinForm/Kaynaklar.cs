@@ -39,6 +39,8 @@ public partial class Kaynaklar
 
     public string kaynak_tur { get; set; }
 
+    public string kaynak_durum { get; set; }
+
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

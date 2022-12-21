@@ -19,12 +19,16 @@ namespace LibraryProjectWinForm
         KutuphaneOtomasyonuEntities db = new KutuphaneOtomasyonuEntities();
         private void OduncVerForm_Load(object sender, EventArgs e)
         {
+            var kullanicilist = db.Kullanicilar.ToList();
+            dataGridView3.DataSource = kullanicilist.ToList();
+
             //kayıtları listeleme
             var kayitList = db.Kayitlar.ToList();
+            var kaynakList = db.Kaynaklar.ToList();
             dataGridView1.DataSource = kayitList.ToList();
 
             //kaynakları listeleme
-            var kaynaklist = db.Kaynaklar.ToList();
+            var kaynaklist = db.Kaynaklar.Where(x=> x.kaynak_durum=="False").ToList();
             dataGridView2.DataSource = kaynaklist.ToList();
 
             //istenmeyen kolonları gizleme
@@ -32,8 +36,9 @@ namespace LibraryProjectWinForm
             dataGridView1.Columns[7].Visible = false;
 
             //kolon adları düzenleme
-            dataGridView1.Columns[1].HeaderText = "Kullanıcı";
-            dataGridView1.Columns[2].HeaderText = "Kaynak Ad";
+            
+            //dataGridView1.Columns[1].HeaderText = "Kullanıcı";
+            //dataGridView1.Columns[2].HeaderText = "Kaynak Ad";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,6 +80,7 @@ namespace LibraryProjectWinForm
             yenikayit.kullanici_id = secilenkisi.kullanici_id;
             yenikayit.alis_tarih = DateTime.Today;
             yenikayit.son_tarih = DateTime.Today.AddDays(15);
+            yenikayit.kayit_durum ="True";
             db.Kayitlar.Add(yenikayit);
             db.SaveChanges();
 
@@ -82,6 +88,9 @@ namespace LibraryProjectWinForm
             dataGridView1.DataSource = kayitlist.ToList();
         }
 
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

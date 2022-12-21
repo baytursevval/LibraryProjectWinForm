@@ -28,7 +28,7 @@ public partial class Kayitlar
 
     public Nullable<System.DateTime> son_tarih { get; set; }
 
-    public Nullable<bool> durum { get; set; }
+    public string kayit_durum { get; set; }
 
 
 

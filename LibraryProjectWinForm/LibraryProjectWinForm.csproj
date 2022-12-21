@@ -139,6 +139,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="OduncAlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OduncAlForm.Designer.cs">
+      <DependentUpon>OduncAlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OduncVerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanici\KullaniciSilForm.resx">
       <DependentUpon>KullaniciSilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OduncAlForm.resx">
+      <DependentUpon>OduncAlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OduncVerForm.resx">
       <DependentUpon>OduncVerForm.cs</DependentUpon>

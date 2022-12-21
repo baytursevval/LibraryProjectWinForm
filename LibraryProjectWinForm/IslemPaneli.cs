@@ -219,5 +219,22 @@ namespace LibraryProjectWinForm
                 kaynakguncDurum = false;
             }
         }
+        private OduncAlForm oduncal;
+        private bool oduncalDurum;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (oduncalDurum == false)
+            {
+                oduncal = new OduncAlForm();
+                oduncal.MdiParent = this;
+                oduncal.Show();
+                oduncalDurum = true;
+            }
+            else
+            {
+                oduncal.Close();
+                oduncalDurum = false;
+            }
+        }
     }
 }
