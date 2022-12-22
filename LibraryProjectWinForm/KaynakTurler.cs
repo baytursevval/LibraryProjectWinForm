@@ -15,39 +15,27 @@ namespace LibraryProjectWinForm
 using System;
     using System.Collections.Generic;
     
-public partial class Kaynaklar
+public partial class KaynakTurler
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Kaynaklar()
+    public KaynakTurler()
     {
 
-        this.Kayitlar = new HashSet<Kayitlar>();
+        this.Kaynaklar = new HashSet<Kaynaklar>();
 
     }
 
 
-    public int kaynak_id { get; set; }
+    public int tur_id { get; set; }
 
-    public string kaynak_ad { get; set; }
-
-    public string kaynak_yazar { get; set; }
-
-    public string kaynak_yayinci { get; set; }
-
-    public Nullable<int> kaynak_sayfasayisi { get; set; }
-
-    public string kaynak_durum { get; set; }
-
-    public Nullable<int> kaynak_tur_id { get; set; }
+    public string tur { get; set; }
 
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Kayitlar> Kayitlar { get; set; }
-
-    public virtual KaynakTurler KaynakTurler { get; set; }
+    public virtual ICollection<Kaynaklar> Kaynaklar { get; set; }
 
 }
 

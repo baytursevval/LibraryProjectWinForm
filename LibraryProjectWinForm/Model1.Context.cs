@@ -42,6 +42,8 @@ public partial class KutuphaneOtomasyonuEntities : DbContext
 
     public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
+    public virtual DbSet<KaynakTurler> KaynakTurler { get; set; }
+
 }
 
 }

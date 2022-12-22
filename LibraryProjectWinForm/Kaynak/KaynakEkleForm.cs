@@ -27,11 +27,14 @@ namespace LibraryProjectWinForm.Kaynak
         private void button1_Click(object sender, EventArgs e)
         {
             Kaynaklar kaynaklar = new Kaynaklar();
+            
             kaynaklar.kaynak_ad = kaynakAdtxt.Text;
             kaynaklar.kaynak_yazar = kaynakYazartxt.Text;
             kaynaklar.kaynak_yayinci = kaynakYayincitxt.Text;
             kaynaklar.kaynak_sayfasayisi =Convert.ToInt16(numericUpDown1.Value);
-            kaynaklar.kaynak_tur = comboBox1.Text;
+            //kaynaklar.kaynak_tur = comboBox1.Text;
+           
+            kaynaklar.kaynak_tur_id= comboBox1.SelectedIndex;
 
             db.Kaynaklar.Add(kaynaklar);
             db.SaveChanges();
@@ -48,11 +51,11 @@ namespace LibraryProjectWinForm.Kaynak
         
         private void KaynakEkleForm_Load(object sender, EventArgs e)
         {
-            /*
+            
             SqlConnection baglanti = new SqlConnection();
             baglanti.ConnectionString = "Data Source = SEVO\\SQLEXPRESS; Initial Catalog = KutuphaneOtomasyonu; Integrated Security = True";
             SqlCommand komut = new SqlCommand();
-            komut.CommandText = "SELECT *FROM Kaynaklar";
+            komut.CommandText = "SELECT *FROM KaynakTurler";
             komut.Connection = baglanti;
             komut.CommandType = CommandType.Text;
 
@@ -61,10 +64,10 @@ namespace LibraryProjectWinForm.Kaynak
             dr = komut.ExecuteReader();
             while (dr.Read())
             {
-                comboBox1.Items.Add(dr["kaynak_tur"]);
+                comboBox1.Items.Add(dr["tur"]);
             }
             baglanti.Close();
-            */
+            
 
             listele();
 

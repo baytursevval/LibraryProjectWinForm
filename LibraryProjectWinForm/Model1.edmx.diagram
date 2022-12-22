@@ -12,6 +12,8 @@
         <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.sysdiagrams" Width="1.5" PointX="4.25" PointY="4.25" />
         <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" />
         <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.KaynakTurler" Width="1.5" PointX="1.625" PointY="3.75" />
+        <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kaynaklar_KaynakTurler" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

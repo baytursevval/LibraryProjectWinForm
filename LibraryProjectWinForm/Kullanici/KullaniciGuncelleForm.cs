@@ -37,8 +37,6 @@ namespace LibraryProjectWinForm.Kullanici
             kullaniciteltxt.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             kullaniciCezatxt.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
            
-            
-
         }
 
         private void button1_Click(object sender, EventArgs e)

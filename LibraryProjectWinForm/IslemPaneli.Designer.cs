@@ -31,6 +31,7 @@ namespace LibraryProjectWinForm
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemPaneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.silKitapbtn = new System.Windows.Forms.Button();
             this.guncelleKitapbtn = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@ namespace LibraryProjectWinForm
             this.ekleKullanicibtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.kullaniciBilgiPanel = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,19 @@ namespace LibraryProjectWinForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 464);
             this.panel1.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 357);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(220, 35);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Ödünç Al";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -194,19 +207,6 @@ namespace LibraryProjectWinForm
             this.kullaniciBilgiPanel.Name = "kullaniciBilgiPanel";
             this.kullaniciBilgiPanel.Size = new System.Drawing.Size(575, 32);
             this.kullaniciBilgiPanel.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 357);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(220, 35);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Ödünç Al";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // IslemPaneli
             // 

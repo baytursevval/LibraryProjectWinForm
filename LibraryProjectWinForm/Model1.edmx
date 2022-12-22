@@ -25,8 +25,15 @@
           <Property Name="kaynak_yazar" Type="varchar" MaxLength="30" />
           <Property Name="kaynak_yayinci" Type="varchar" MaxLength="30" />
           <Property Name="kaynak_sayfasayisi" Type="int" />
-          <Property Name="kaynak_tur" Type="varchar" MaxLength="30" />
           <Property Name="kaynak_durum" Type="varchar" MaxLength="5" />
+          <Property Name="kaynak_tur_id" Type="int" />
+        </EntityType>
+        <EntityType Name="KaynakTurler">
+          <Key>
+            <PropertyRef Name="tur_id" />
+          </Key>
+          <Property Name="tur_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tur" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Kullanicilar">
           <Key>
@@ -87,9 +94,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Kaynaklar_KaynakTurler">
+          <End Role="KaynakTurler" Type="Self.KaynakTurler" Multiplicity="0..1" />
+          <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KaynakTurler">
+              <PropertyRef Name="tur_id" />
+            </Principal>
+            <Dependent Role="Kaynaklar">
+              <PropertyRef Name="kaynak_tur_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="KutuphaneOtomasyonuModelStoreContainer">
           <EntitySet Name="Kayitlar" EntityType="Self.Kayitlar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kaynaklar" EntityType="Self.Kaynaklar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KaynakTurler" EntityType="Self.KaynakTurler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -100,6 +120,10 @@
           <AssociationSet Name="FK_Kayitlar_Kullanicilar" Association="Self.FK_Kayitlar_Kullanicilar">
             <End Role="Kullanicilar" EntitySet="Kullanicilar" />
             <End Role="Kayitlar" EntitySet="Kayitlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kaynaklar_KaynakTurler" Association="Self.FK_Kaynaklar_KaynakTurler">
+            <End Role="KaynakTurler" EntitySet="KaynakTurler" />
+            <End Role="Kaynaklar" EntitySet="Kaynaklar" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -133,6 +157,11 @@
             <End Role="Kullanicilar" EntitySet="Kullanicilar" />
             <End Role="Kayitlar" EntitySet="Kayitlar" />
           </AssociationSet>
+          <EntitySet Name="KaynakTurler" EntityType="KutuphaneOtomasyonuModel.KaynakTurler" />
+          <AssociationSet Name="FK_Kaynaklar_KaynakTurler" Association="KutuphaneOtomasyonuModel.FK_Kaynaklar_KaynakTurler">
+            <End Role="KaynakTurler" EntitySet="KaynakTurler" />
+            <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Kullanicilar">
           <Key>
@@ -157,8 +186,9 @@
           <Property Name="kaynak_yayinci" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="kaynak_sayfasayisi" Type="Int32" />
           <NavigationProperty Name="Kayitlar" Relationship="KutuphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" FromRole="Kaynaklar" ToRole="Kayitlar" />
-          <Property Name="kaynak_tur" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="kaynak_durum" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="kaynak_tur_id" Type="Int32" />
+          <NavigationProperty Name="KaynakTurler" Relationship="KutuphaneOtomasyonuModel.FK_Kaynaklar_KaynakTurler" FromRole="Kaynaklar" ToRole="KaynakTurler" />
         </EntityType>
         <EntityType Name="Kayitlar">
           <Key>
@@ -207,6 +237,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="KaynakTurler">
+          <Key>
+            <PropertyRef Name="tur_id" />
+          </Key>
+          <Property Name="tur_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tur" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kaynaklar" Relationship="KutuphaneOtomasyonuModel.FK_Kaynaklar_KaynakTurler" FromRole="KaynakTurler" ToRole="Kaynaklar" />
+        </EntityType>
+        <Association Name="FK_Kaynaklar_KaynakTurler">
+          <End Type="KutuphaneOtomasyonuModel.KaynakTurler" Role="KaynakTurler" Multiplicity="0..1" />
+          <End Type="KutuphaneOtomasyonuModel.Kaynaklar" Role="Kaynaklar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KaynakTurler">
+              <PropertyRef Name="tur_id" />
+            </Principal>
+            <Dependent Role="Kaynaklar">
+              <PropertyRef Name="kaynak_tur_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -243,8 +293,8 @@
           <EntitySetMapping Name="Kaynaklar">
             <EntityTypeMapping TypeName="KutuphaneOtomasyonuModel.Kaynaklar">
               <MappingFragment StoreEntitySet="Kaynaklar">
+                <ScalarProperty Name="kaynak_tur_id" ColumnName="kaynak_tur_id" />
                 <ScalarProperty Name="kaynak_durum" ColumnName="kaynak_durum" />
-                <ScalarProperty Name="kaynak_tur" ColumnName="kaynak_tur" />
                 <ScalarProperty Name="kaynak_sayfasayisi" ColumnName="kaynak_sayfasayisi" />
                 <ScalarProperty Name="kaynak_yayinci" ColumnName="kaynak_yayinci" />
                 <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
@@ -273,6 +323,14 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KaynakTurler">
+            <EntityTypeMapping TypeName="KutuphaneOtomasyonuModel.KaynakTurler">
+              <MappingFragment StoreEntitySet="KaynakTurler">
+                <ScalarProperty Name="tur" ColumnName="tur" />
+                <ScalarProperty Name="tur_id" ColumnName="tur_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
