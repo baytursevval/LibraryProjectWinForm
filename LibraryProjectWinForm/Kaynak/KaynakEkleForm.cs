@@ -25,22 +25,44 @@ namespace LibraryProjectWinForm.Kaynak
             dataGridView1.DataSource = kaynaklar.ToList();
         }
         private void button1_Click(object sender, EventArgs e)
-        {
-            Kaynaklar kaynaklar = new Kaynaklar();
+        {/*
+            try
+            {
+            */
+                
+                Kaynaklar kaynaklar = new Kaynaklar();
+               
             
-            kaynaklar.kaynak_ad = kaynakAdtxt.Text;
-            kaynaklar.kaynak_yazar = kaynakYazartxt.Text;
-            kaynaklar.kaynak_yayinci = kaynakYayincitxt.Text;
-            kaynaklar.kaynak_sayfasayisi =Convert.ToInt16(numericUpDown1.Value);
-            //kaynaklar.kaynak_tur = comboBox1.Text;
-           
-            kaynaklar.kaynak_tur_id= comboBox1.SelectedIndex;
+                KaynakTurler kaynaktur = new KaynakTurler();
+                kaynaklar.kaynak_ad = kaynakAdtxt.Text;
+                kaynaklar.kaynak_yazar = kaynakYazartxt.Text;
+                kaynaklar.kaynak_yayinci = kaynakYayincitxt.Text;
+                kaynaklar.kaynak_sayfasayisi = Convert.ToInt16(numericUpDown1.Value);
+                kaynaklar.kaynak_durum = "False";
+                kaynaklar.kaynak_tur_id= comboBox1.SelectedIndex;
+
+                //kaynaktur.tur = comboBox1.Text;
+            
+
+            //kaynaktur.tur_id =Convert.ToInt32(db.KaynakTurler.Where(x => x.tur.Contains(kitapturu)).ToList());  
+
+            //name=kaynaklar.kaynak_tur roman olan kaydın idsi
+
+            //kaynaklar.kaynak_tur_id = db.KaynakTurler.Where(x => x.tur == kitapturu).FirstOrDefault();
+            //kaynaklar.kaynak_tur_id = db.KaynakTurler.Where(x=>x.tur_id==)
+
+
 
             db.Kaynaklar.Add(kaynaklar);
-            db.SaveChanges();
+                db.SaveChanges();
 
-            var kliste = db.Kaynaklar.ToList();
-            dataGridView1.DataSource = kliste.ToList();
+                var kliste = db.Kaynaklar.ToList();
+                dataGridView1.DataSource = kliste.ToList();
+           /* }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -42,7 +42,9 @@ namespace LibraryProjectWinForm
             this.ekleKullanicibtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.kullaniciBilgiPanel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.kullaniciBilgiPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -201,12 +203,23 @@ namespace LibraryProjectWinForm
             // 
             // kullaniciBilgiPanel
             // 
+            this.kullaniciBilgiPanel.Controls.Add(this.button4);
             this.kullaniciBilgiPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.kullaniciBilgiPanel.Location = new System.Drawing.Point(220, 0);
             this.kullaniciBilgiPanel.Margin = new System.Windows.Forms.Padding(4);
             this.kullaniciBilgiPanel.Name = "kullaniciBilgiPanel";
             this.kullaniciBilgiPanel.Size = new System.Drawing.Size(575, 32);
             this.kullaniciBilgiPanel.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(110, 32);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "İstatistik";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // IslemPaneli
             // 
@@ -223,6 +236,7 @@ namespace LibraryProjectWinForm
             this.Text = "IslemPaneli";
             this.Load += new System.EventHandler(this.IslemPaneli_Load);
             this.panel1.ResumeLayout(false);
+            this.kullaniciBilgiPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -241,5 +255,6 @@ namespace LibraryProjectWinForm
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

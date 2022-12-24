@@ -236,5 +236,14 @@ namespace LibraryProjectWinForm
                 oduncalDurum = false;
             }
         }
+        private IstatistikForm istatistik;
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            istatistik = new IstatistikForm();
+            istatistik.Show();
+            istatistik.MdiParent = this;
+            //this.Hide();
+        }
     }
 }
