@@ -27,6 +27,7 @@
           <Property Name="kaynak_sayfasayisi" Type="int" />
           <Property Name="kaynak_durum" Type="varchar" MaxLength="5" />
           <Property Name="kaynak_tur_id" Type="int" />
+          <Property Name="okunma_sayisi" Type="int" />
         </EntityType>
         <EntityType Name="KaynakTurler">
           <Key>
@@ -189,6 +190,7 @@
           <Property Name="kaynak_durum" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="kaynak_tur_id" Type="Int32" />
           <NavigationProperty Name="KaynakTurler" Relationship="KutuphaneOtomasyonuModel.FK_Kaynaklar_KaynakTurler" FromRole="Kaynaklar" ToRole="KaynakTurler" />
+          <Property Name="okunma_sayisi" Type="Int32" />
         </EntityType>
         <EntityType Name="Kayitlar">
           <Key>
@@ -293,6 +295,7 @@
           <EntitySetMapping Name="Kaynaklar">
             <EntityTypeMapping TypeName="KutuphaneOtomasyonuModel.Kaynaklar">
               <MappingFragment StoreEntitySet="Kaynaklar">
+                <ScalarProperty Name="okunma_sayisi" ColumnName="okunma_sayisi" />
                 <ScalarProperty Name="kaynak_tur_id" ColumnName="kaynak_tur_id" />
                 <ScalarProperty Name="kaynak_durum" ColumnName="kaynak_durum" />
                 <ScalarProperty Name="kaynak_sayfasayisi" ColumnName="kaynak_sayfasayisi" />

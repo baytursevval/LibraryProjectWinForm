@@ -64,6 +64,11 @@ namespace LibraryProjectWinForm
             dataGridView2.DataSource = bulunankaynak;
         }
 
+        public void listele()
+        {
+            var kaynaklar = db.Kaynaklar.ToList();
+            dataGridView1.DataSource = kaynaklar.ToList();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             //kişi aldık
@@ -81,11 +86,18 @@ namespace LibraryProjectWinForm
             yenikayit.alis_tarih = DateTime.Today;
             yenikayit.son_tarih = DateTime.Today.AddDays(15);
             yenikayit.kayit_durum ="True";
+
+            secilenkitap.okunma_sayisi += 1;
+
             db.Kayitlar.Add(yenikayit);
             db.SaveChanges();
-
+            //listele();
             var kayitlist = db.Kayitlar.ToList();
             dataGridView1.DataSource = kayitlist.ToList();
+            //this.Hide();
+            //this.Show();
+            dataGridView2.Hide();
+            dataGridView2.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

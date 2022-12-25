@@ -9,10 +9,10 @@
         <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kullanicilar" Width="1.5" PointX="3.25" PointY="0.875" />
         <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kaynaklar" Width="1.5" PointX="5.5" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.Kayitlar" Width="1.5" PointX="7.5" PointY="1" />
-        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.sysdiagrams" Width="1.5" PointX="4.25" PointY="4.25" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.sysdiagrams" Width="1.5" PointX="4.25" PointY="4.5" />
         <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" />
         <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" />
-        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.KaynakTurler" Width="1.5" PointX="1.625" PointY="3.75" />
+        <EntityTypeShape EntityType="KutuphaneOtomasyonuModel.KaynakTurler" Width="1.5" PointX="2.125" PointY="3.75" />
         <AssociationConnector Association="KutuphaneOtomasyonuModel.FK_Kaynaklar_KaynakTurler" />
         </Diagram>
     </edmx:Diagrams>

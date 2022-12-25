@@ -41,6 +41,8 @@ public partial class Kaynaklar
 
     public Nullable<int> kaynak_tur_id { get; set; }
 
+    public Nullable<int> okunma_sayisi { get; set; }
+
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
