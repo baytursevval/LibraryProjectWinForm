@@ -78,6 +78,8 @@ namespace LibraryProjectWinForm.Kaynak
             
 
             listele();
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
 
         }
         

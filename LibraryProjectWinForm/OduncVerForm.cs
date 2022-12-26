@@ -36,9 +36,14 @@ namespace LibraryProjectWinForm
             dataGridView1.Columns[7].Visible = false;
 
             //kolon adları düzenleme
-            
+
             //dataGridView1.Columns[1].HeaderText = "Kullanıcı";
             //dataGridView1.Columns[2].HeaderText = "Kaynak Ad";
+            dataGridView3.Columns[6].Visible = false;
+            dataGridView3.Columns[7].Visible = false;
+
+            dataGridView2.Columns[8].Visible = false;
+            dataGridView2.Columns[9].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

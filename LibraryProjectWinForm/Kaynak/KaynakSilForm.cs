@@ -26,6 +26,8 @@ namespace LibraryProjectWinForm.Kaynak
         private void KaynakSilForm_Load(object sender, EventArgs e)
         {
             listele();
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

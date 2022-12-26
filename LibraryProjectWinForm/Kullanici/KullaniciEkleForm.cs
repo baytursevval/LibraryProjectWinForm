@@ -28,6 +28,8 @@ namespace LibraryProjectWinForm.NewFolder1
         {
             kullaniciCezatxt.Text = "0";
             listele();
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

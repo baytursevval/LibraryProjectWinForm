@@ -26,6 +26,8 @@ namespace LibraryProjectWinForm.Kullanici
         private void KullaniciGuncelleForm_Load(object sender, EventArgs e)
         {
             listele();
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

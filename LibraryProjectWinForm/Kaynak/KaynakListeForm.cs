@@ -21,11 +21,9 @@ namespace LibraryProjectWinForm.Kaynak
         {
             var kaynaklar = db.Kaynaklar.ToList();
             dataGridView1.DataSource = kaynaklar.ToList();
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

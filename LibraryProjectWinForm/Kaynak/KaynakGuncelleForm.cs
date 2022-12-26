@@ -43,6 +43,8 @@ namespace LibraryProjectWinForm.Kaynak
             }
             baglanti.Close();
             listele();
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
