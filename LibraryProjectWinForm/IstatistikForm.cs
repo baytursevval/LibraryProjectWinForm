@@ -24,6 +24,7 @@ namespace LibraryProjectWinForm
         {
             this.chart1.Titles.Add("okunan tür grafiği");
 
+            
             baglanti.Open();
             SqlCommand komut = new SqlCommand("select T.tur_id, SUM(K.okunma_sayisi) as 'toplam' from Kaynaklar K, KaynakTurler T where T.tur_id=K.kaynak_tur_id group by  T.tur_id", baglanti);
             SqlDataReader oku = komut.ExecuteReader();
@@ -35,9 +36,7 @@ namespace LibraryProjectWinForm
             baglanti.Close();
             
         }
-        private void GrafikOlustur()
-        {
-            
-        }
+
+       
     }
 }
