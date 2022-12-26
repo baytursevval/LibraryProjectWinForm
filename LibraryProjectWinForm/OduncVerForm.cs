@@ -28,7 +28,7 @@ namespace LibraryProjectWinForm
             dataGridView1.DataSource = kayitList.ToList();
 
             //kaynakları listeleme
-            var kaynaklist = db.Kaynaklar.Where(x=> x.kaynak_durum=="False").ToList();
+            var kaynaklist = db.Kaynaklar.Where(x=> x.kaynak_durum=="True").ToList();
             dataGridView2.DataSource = kaynaklist.ToList();
 
             //istenmeyen kolonları gizleme
@@ -52,10 +52,6 @@ namespace LibraryProjectWinForm
                 label2.Text = "Böyle bir kullanıcı yok";
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -71,38 +67,45 @@ namespace LibraryProjectWinForm
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            //kişi aldık
-            string secilenkisiTC = textBox1.Text;
-            var secilenkisi = db.Kullanicilar.Where(x => x.kullanici_tc.Equals(secilenkisiTC)).FirstOrDefault();
+           
+                //kişi aldık
+                string secilenkisiTC = textBox1.Text;
+                var secilenkisi = db.Kullanicilar.Where(x => x.kullanici_tc.Equals(secilenkisiTC)).FirstOrDefault();
 
-            //kitap aldık
-            int secilenkitapID =Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
-            var secilenkitap = db.Kaynaklar.Where(x => x.kaynak_id == secilenkitapID).FirstOrDefault();
+                //kitap aldık
+                int secilenkitapID = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
+                var secilenkitap = db.Kaynaklar.Where(x => x.kaynak_id == secilenkitapID).FirstOrDefault();
+                secilenkitap.kaynak_durum = "False";
+                Kayitlar yenikayit = new Kayitlar();
+                //yenikayit.kitap_id = secilenkitap.kaynak_id;
+                yenikayit.kitap_id = secilenkitapID;
+                yenikayit.kullanici_id = secilenkisi.kullanici_id;
+                yenikayit.alis_tarih = DateTime.Today;
+                yenikayit.son_tarih = DateTime.Today.AddDays(15);
+                yenikayit.kayit_durum = "False";
 
-            Kayitlar yenikayit = new Kayitlar();
-            //yenikayit.kitap_id = secilenkitap.kaynak_id;
-            yenikayit.kitap_id = secilenkitapID;
-            yenikayit.kullanici_id = secilenkisi.kullanici_id;
-            yenikayit.alis_tarih = DateTime.Today;
-            yenikayit.son_tarih = DateTime.Today.AddDays(15);
-            yenikayit.kayit_durum ="True";
+                secilenkitap.okunma_sayisi += 1;
 
-            secilenkitap.okunma_sayisi += 1;
+                db.Kayitlar.Add(yenikayit);
+                db.SaveChanges();
+                //listele();
+                var kayitlist = db.Kayitlar.ToList();
+                dataGridView1.DataSource = kayitlist.ToList();
+                
+                //dataGridView2.Hide();
+                //dataGridView2.Show();
 
-            db.Kayitlar.Add(yenikayit);
-            db.SaveChanges();
-            //listele();
-            var kayitlist = db.Kayitlar.ToList();
-            dataGridView1.DataSource = kayitlist.ToList();
-            //this.Hide();
-            //this.Show();
-            dataGridView2.Hide();
-            dataGridView2.Show();
+                var kaynaklist = db.Kaynaklar.Where(x => x.kaynak_durum == "True").ToList();
+                dataGridView2.DataSource = kaynaklist.ToList();
+
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string gelenad = textBox1.Text;
+            var bulunankisi = db.Kullanicilar.Where(x => x.kullanici_ad.Contains(gelenad)).ToList();
+            dataGridView3.DataSource = bulunankisi;
         }
     }
 }

@@ -35,7 +35,7 @@ namespace LibraryProjectWinForm.Kaynak
                 kaynaklar.kaynak_yazar = kaynakYazartxt.Text;
                 kaynaklar.kaynak_yayinci = kaynakYayincitxt.Text;
                 kaynaklar.kaynak_sayfasayisi = Convert.ToInt16(numericUpDown1.Value);
-                kaynaklar.kaynak_durum = "False";
+                kaynaklar.kaynak_durum = "True";
                 kaynaklar.kaynak_tur_id= comboBox1.SelectedIndex+1;
                 kaynaklar.okunma_sayisi = 0;
 

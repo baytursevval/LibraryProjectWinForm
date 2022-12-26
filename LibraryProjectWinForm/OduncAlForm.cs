@@ -26,7 +26,7 @@ namespace LibraryProjectWinForm
 
         private void OduncAlForm_Load(object sender, EventArgs e)
         {
-            var kayitList = db.Kayitlar.Where(x => x.kayit_durum == "True").ToList();
+            var kayitList = db.Kayitlar.Where(x => x.kayit_durum == "False").ToList();
 
 
             dataGridView1.DataSource = kayitList.ToList();
@@ -38,7 +38,7 @@ namespace LibraryProjectWinForm
             //int secilenkitapID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value);
             int secilenid = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             var kayit = db.Kayitlar.Where(x => x.kayit_id == secilenid).FirstOrDefault();
-            kayit.kayit_durum = "False";
+            kayit.kayit_durum = "True";
             //yenikayit.kitap_id = secilenkitapID;
             
             //yenikayit.kayit_durum = "False";

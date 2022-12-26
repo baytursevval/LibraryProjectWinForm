@@ -52,7 +52,7 @@ namespace LibraryProjectWinForm
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(921, 122);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            
             // 
             // label1
             // 
@@ -62,7 +62,7 @@ namespace LibraryProjectWinForm
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Kullanıcı TC:";
+            this.label1.Text = "Kullanıcı Adı:";
             // 
             // textBox1
             // 
@@ -71,6 +71,7 @@ namespace LibraryProjectWinForm
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 25);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -100,7 +101,6 @@ namespace LibraryProjectWinForm
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(477, 162);
             this.dataGridView2.TabIndex = 5;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // textBox2
             // 

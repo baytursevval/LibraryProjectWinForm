@@ -53,7 +53,8 @@ namespace LibraryProjectWinForm.Kaynak
             kaynak.kaynak_yazar = kaynakYazartxt.Text;
             kaynak.kaynak_yayinci = kaynakYayincitxt.Text;
             kaynak.kaynak_sayfasayisi = Convert.ToInt16(numericUpDown1.Value);
-            
+            kaynak.kaynak_durum = "True";
+
             kaynak.kaynak_tur_id = comboBox1.SelectedIndex;
 
             db.SaveChanges();
