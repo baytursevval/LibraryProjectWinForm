@@ -16,7 +16,7 @@ namespace LibraryProjectWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IslemPaneli());
+            Application.Run(new Form1());
         }
     }
 }

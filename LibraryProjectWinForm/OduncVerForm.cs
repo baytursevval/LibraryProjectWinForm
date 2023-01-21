@@ -112,5 +112,15 @@ namespace LibraryProjectWinForm
             var bulunankisi = db.Kullanicilar.Where(x => x.kullanici_ad.Contains(gelenad)).ToList();
             dataGridView3.DataSource = bulunankisi;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
